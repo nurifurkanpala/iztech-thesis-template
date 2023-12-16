@@ -1,0 +1,67 @@
+% This package allows the use of conditions, making the template more dynamic.
+\usepackage{ifthen}
+
+% This package is to create dummy texts. You may delete it after there is no 
+% dummy text anymore.
+\usepackage{blindtext}
+
+% This package is to set the paper type and margins.
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left   = 3.5cm,
+	top    = 2.5cm,
+	right  = 2.5cm,
+	bottom = 2.5cm
+}
+
+% These packages are to set the font as Times New Roman.
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{titlesec}
+
+% To set the chapter headings
+\titleformat{\chapter}
+	[display]
+	{\vspace{-2.1cm}\centering\normalfont\fontsize{16}{16}\selectfont\bfseries}
+	{CHAPTER \thechapter}
+	{1.5cm}{\MakeUppercase}
+
+% To set the section headings
+\titleformat{\section}
+	[hang]
+	{\normalfont\fontsize{14}{14}\selectfont\bfseries}
+	{\thesection.}
+	{0.5em}{}
+
+% To set the subsection headings
+\titleformat{\subsection}
+[hang]
+{\normalfont\fontsize{14}{14}\selectfont\bfseries}
+{\thesubsection.}
+{0.5em}{}
+
+% Set the default font size as 12
+\fontsize{12}{12}
+
+% Left one space before and after the headings
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+\titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip}
+
+% It is for the spacing. The guide remarks the spacing must be 1.5. However, 
+% the size fits with the guide document when 1.75 in LaTeX.
+\usepackage{setspace}
+\setstretch{1.75}
+
+% Set indentations
+\setlength{\parindent}{1.27cm}
+\usepackage{indentfirst}
+
+% Set bibliography
+\ifthenelse{\equal{\BibliographyPreferences}{chicago}}{
+	\usepackage[authordate,backend=biber]{biblatex-chicago}
+}{}
+\ifthenelse{\equal{\BibliographyPreferences}{acs}}{
+	\usepackage[style=chem-acs,backend=biber]{biblatex}
+}{}
+\addbibresource{references.bib}
