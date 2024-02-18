@@ -6,22 +6,37 @@
 	% Preliminary pages
 	\input{preliminary_pages/00_title_page.tex}
 	\input{preliminary_pages/01_approval_page.tex}
-	\input{preliminary_pages/02_acknowledgments.tex}
+	\ifthenelse{\equal{\Acknowledgments}{yes}}{
+		\input{preliminary_pages/02_acknowledgments.tex}
+	}{}
 	\input{preliminary_pages/03_abstract.tex}
 	\input{preliminary_pages/04_ozet.tex}
-	\input{preliminary_pages/05_dedication.tex}
-	\input{preliminary_pages/06_preface.tex}
+	\ifthenelse{\equal{\Dedication}{yes}}{
+		\input{preliminary_pages/05_dedication.tex}
+	}{}
+	\ifthenelse{\equal{\Preface}{yes}}{
+		\input{preliminary_pages/06_preface.tex}
+	}{}
 	\input{preliminary_pages/07_table_of_contents.tex}
 	\input{preliminary_pages/08_list_of_figures.tex}
 	\input{preliminary_pages/09_list_of_tables.tex}
-	\input{preliminary_pages/10_list_of_symbols.tex}
-	\input{preliminary_pages/11_english_turkish_dictionary.tex}
+	%\input{preliminary_pages/10_list_of_symbols.tex}
+	%\input{preliminary_pages/11_english_turkish_dictionary.tex}
+	
 
-	% Text
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%% START OF THE TEXT %%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% Example chapters and sections
 	\chapter{Introduction}
+
+	% Do not remove this line. This line must be placed once immediately after 
+	% the first chapter.
+	\pagenumbering{arabic}
+
 	\section{Example Section 1}
 	\blindtext[2]
-
 	\blindtext[2]
 	\section{Example Section 2}
 	\blindtext[5]
@@ -34,18 +49,20 @@
 	\blindtext[5]
 	\section{Example Section 4}
 	\blindtext[5]
-	\autocite{torvalds2001just}
-	\autocite{kopka2004guide}
-	\autocite{yakaryilmaz2011unbounded}
-	\autocite{bernstein2019fast}
-	\autocite[11]{almheiri2021entropy}
-
 	\chapter{Body}
 	\blindtext[20]
-
 	\chapter{Conclusion}
 	\blindtext[10]
 
+	% Guide of usage of basic LaTeX commands
+	\chapter{Guide}
+	\input{chapters/guide.tex}
+
+	%%%%%%%%%%%%%%%%%%%%%%%
+	%%% END OF THE TEXT %%%
+	%%%%%%%%%%%%%%%%%%%%%%%
+
+	
 	% Reference Material
 	\printbibliography
 \end{document}

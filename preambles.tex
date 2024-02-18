@@ -1,9 +1,34 @@
 % This package allows the use of conditions, making the template more dynamic.
 \usepackage{ifthen}
 
+% This is for overwriting the commands.
+\newcommand{\declarecommand}[1]{\providecommand{#1}{}\renewcommand{#1}}
+
 % This package is to create dummy texts. You may delete it after there is no 
 % dummy text anymore.
 \usepackage{blindtext}
+
+% This package is for placing textboxes at the desired positions.
+\usepackage[absolute,overlay]{textpos}
+
+% This package for the hyperlinks.
+\usepackage[hidelinks]{hyperref}
+
+% This part is for positioning the page numberings.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\footskip=0.5cm
+\fancyhfoffset[RO,L]{0.5cm}
+\rfoot{\thepage}
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+	\thispagestyle{fancy}
+	\global\@topnum\z@
+	\@afterindentfalse
+	\secdef\@chapter\@schapter}
+\makeatother
 
 % This package is to set the paper type and margins.
 \usepackage{geometry}
@@ -36,10 +61,10 @@
 
 % To set the subsection headings
 \titleformat{\subsection}
-[hang]
-{\normalfont\fontsize{14}{14}\selectfont\bfseries}
-{\thesubsection.}
-{0.5em}{}
+	[hang]
+	{\normalfont\fontsize{14}{14}\selectfont\bfseries}
+	{\thesubsection.}
+	{0.5em}{}
 
 % Set the default font size as 12
 \fontsize{12}{12}
@@ -53,6 +78,10 @@
 \usepackage{setspace}
 \setstretch{1.75}
 
+% Set spacings
+\newcommand{\OneAndHalfSpacing}{\vspace{0.15cm}}
+\newcommand{\DoubleOneAndHalfSpacing}{\vspace{1.30cm}}
+
 % Set indentations
 \setlength{\parindent}{1.27cm}
 \usepackage{indentfirst}
@@ -65,3 +94,82 @@
 	\usepackage[style=chem-acs,backend=biber]{biblatex}
 }{}
 \addbibresource{references.bib}
+\declarecommand{\cite}[1]{\autocite{#1}}
+
+% Set text block center
+\newcommand{\TextBlockCenter}{\dimexpr\paperwidth/2-\textwidth/2}
+
+% Set the table of contents
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\usepackage[nottoc]{tocbibind}
+\RequirePackage[titles]{tocloft}
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{} 
+\renewcommand{\cftpartpagefont}{}
+\renewcommand{\cftsecaftersnum}{.}
+\setlength{\cftbeforechapskip}{20pt}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftbeforelottitleskip}{0pt}
+\renewcommand\cftchappresnum{\chaptername~}
+\renewcommand\cftchapaftersnum{.}
+\newlength{\mytoclength}
+\settowidth{\mytoclength}{\cftchappresnum\cftchapaftersnum}
+\addtolength\cftchapnumwidth{\mytoclength}
+\setlength{\cftsecindent}{5.5em}
+\setlength{\cftsubsecindent}{6.25em}
+\setlength{\cftsubsubsecindent}{7em}
+\setlength{\cftparaindent}{7.75em}
+\setlength{\cftsubparaindent}{8.5em}
+
+% Set lists
+\makeatletter
+\newlength{\latexpnumwidth}
+\setlength{\latexpnumwidth}{\@pnumwidth}
+\renewcommand{\cfttabpresnum}{\tablename~}
+\newlength{\mylotlength}
+\settowidth{\mylotlength}{\cfttabpresnum\cfttabaftersnum}
+\addtolength\cfttabnumwidth{\mylotlength}
+\let\origcftdot\cftdot
+\addtocontents{lot}{\protect\cftsetpnumwidth{25pt}}
+\addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{}}
+\addtocontents{lot}{\protect\contentsline{table}{\numberline{\textbf{\underline{\tablename}~}}}{\textbf{\underline{Page}}}{}{}}
+\addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}
+\addtocontents{lot}{\vskip\baselineskip\par}
+\renewcommand{\cftfigpresnum}{\figurename~}
+\newlength{\myloflength}
+\settowidth{\myloflength}{\cftfigpresnum\cftfigaftersnum}
+\addtolength\cftfignumwidth{\myloflength}
+\let\origcftdot\cftdot
+\addtocontents{lof}{\protect\cftsetpnumwidth{25pt}}
+\addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{}}
+\phantomsection\addtocontents{lof}{
+\protect\contentsline{figure}{\numberline{\textbf{\underline{\figurename}~}}}{\textbf{\underline{Page}}}{}{}} 
+\addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}
+\addtocontents{lof}{\vskip\baselineskip\par}
+\makeatother
+
+% Put a dot after the figure and table references
+\renewcommand{\thetable}{\arabic{table}.}
+\renewcommand{\thefigure}{\arabic{figure}.}
+
+% Remove the colon in the captions of the figures and tables
+\usepackage{caption}
+\captionsetup[table]{labelsep=space}
+\captionsetup[figure]{labelsep=space}
+
+% Other useful packages
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.7}

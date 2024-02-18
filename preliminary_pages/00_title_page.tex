@@ -1,11 +1,47 @@
-~\\~\\~\\ % 3xsingle spacing
+\pagenumbering{roman}
+\thispagestyle{empty}
 
 \begin{center}
-	\textbf{\fontsize{18pt}{27pt}\selectfont\MakeUppercase\ThesisTitle}
+	\begin{textblock*}{\textwidth}(\TextBlockCenter,4.8cm)
+		\textbf{\fontsize{18pt}{27pt}\selectfont\MakeUppercase\ThesisTitle}
+	\end{textblock*}
 
-	\vspace*{10\baselineskip}
+	\begin{textblock*}{\textwidth}(\TextBlockCenter,9.8cm)
+		\begin{spacing}{1}
+			{\fontsize{14}{16}\bf
+				A Thesis Submitted to\\
+				the Graduate School of Engineering and Sciences of\\
+				İzmir Institute of Technology\\
+				in Partial Fulfillment of the Requirements for the Degree of\\
+				~\\
+				\ifthenelse{\equal{\ThesisType}{master}}{
+					MASTER OF SCIENCES\\
+				}{
+					DOCTOR OF PHILOSOPHY\\
+				}
+				~\\
+				in \DepartmentName
+			}
+		\end{spacing}
+	\end{textblock*}
 
-	\begin{minipage}{\textwidth}
-		A Thesis Submitted
-	\end{minipage}
+	\begin{textblock*}{\textwidth}(\TextBlockCenter,17cm)
+		\begin{spacing}{1}
+			{\fontsize{14}{16}\bf
+				by\\
+				\AuthorName{ }\MakeUppercase\AuthorSurname
+			}
+		\end{spacing}
+	\end{textblock*}
+
+	\begin{textblock*}{\textwidth}(\TextBlockCenter,22.8cm)
+		\begin{spacing}{1}
+			{\fontsize{14}{16}\bf
+			\DefenceMonth{ }\DefenceYear\\
+				İZMİR
+			}
+		\end{spacing}
+	\end{textblock*}
 \end{center}
+
+~\pagebreak

@@ -1,0 +1,81 @@
+~\pagebreak
+
+\thispagestyle{empty}
+
+\begin{spacing}{1}
+	\noindent We approve the thesis of
+	\textbf{\AuthorName{ }\MakeUppercase\AuthorSurname}
+	\vspace{0.5cm}
+
+	\noindent\textbf{Examining Committee Members:}
+	\vspace{0.5cm}
+
+	\noindent\rule{5cm}{0.1mm}\\
+	\textbf{\CommitteeMemberOneTitle{ }\CommitteeMemberOneName{ }
+	\MakeUppercase\CommitteeMemberOneSurname}\\
+	Department of \CommitteeMemberOneDepartment, \CommitteeMemberOneUniversity
+	\vspace{0.5cm}
+
+	\noindent\rule{5cm}{0.1mm}\\
+	\textbf{\CommitteeMemberTwoTitle{ }\CommitteeMemberTwoName{ }
+	\MakeUppercase\CommitteeMemberTwoSurname}\\
+	Department of \CommitteeMemberTwoDepartment, \CommitteeMemberTwoUniversity
+	\vspace{0.5cm}
+
+	\noindent\rule{5cm}{0.1mm}\\
+	\textbf{\CommitteeMemberThreeTitle{ }\CommitteeMemberThreeName{ }
+	\MakeUppercase\CommitteeMemberThreeSurname}\\
+	Department of \CommitteeMemberThreeDepartment, \CommitteeMemberThreeUniversity
+	\vspace{0.5cm}
+
+	\ifthenelse{\equal{\ForthCommitteeMember}{yes}}{
+		\noindent\rule{5cm}{0.1mm}\\
+		\textbf{\CommitteeMemberFourTitle{ }\CommitteeMemberFourName{ }
+		\MakeUppercase\CommitteeMemberFourSurname}\\
+		Department of \CommitteeMemberFourDepartment, \CommitteeMemberFourUniversity
+		\vspace{0.5cm}
+	}{}
+
+	\ifthenelse{\equal{\FifthCommitteeMember}{yes}}{
+		\noindent\rule{5cm}{0.1mm}\\
+		\textbf{\CommitteeMemberFiveTitle{ }\CommitteeMemberFiveName{ }
+		\MakeUppercase\CommitteeMemberFiveSurname}\\
+		Department of \CommitteeMemberFiveDepartment, \CommitteeMemberFiveUniversity
+		\vspace{0.5cm}
+	}{}
+
+	\begin{textblock*}{\textwidth}(3.5cm,17cm)
+		\noindent\rule{5cm}{0.1mm}\\
+		\textbf{\SupervisorTitle{ }\SupervisorName{ }
+		\MakeUppercase\SupervisorSurname}\\
+		Department of \SupervisorDepartment\\
+		\SupervisorUniversity
+	\end{textblock*}
+
+	\ifthenelse{\equal{\CoSupervisor}{yes}}{
+		\begin{textblock*}{\textwidth}(12cm,17cm)
+			\noindent\rule{5cm}{0.1mm}\\
+			\textbf{\CoSupervisorTitle{ }\CoSupervisorName{ }
+			\MakeUppercase\CoSupervisorSurname}\\
+			Department of \CoSupervisorDepartment\\
+			\CoSupervisorUniversity
+		\end{textblock*}
+	}{}
+
+	\begin{textblock*}{\textwidth}(3.5cm,20cm)
+		\noindent\rule{5cm}{0.1mm}\\
+		\textbf{\HeadOfTheDepartmentTitle{ }\HeadOfTheDepartmentName{ }
+		\MakeUppercase\HeadOfTheDepartmentSurname}\\
+		Head of the Department of\\
+		\HeadOfTheDepartmentDepartment
+	\end{textblock*}
+
+	\begin{textblock*}{\textwidth}(12cm,20cm)
+		\noindent\rule{5cm}{0.1mm}\\
+		\textbf{\HeadOfTheGraduateSchoolTitle{ }\HeadOfTheGraduateSchoolName{ }
+		\MakeUppercase\HeadOfTheGraduateSchoolSurname}\\
+		Dean of the Graduate School of\\
+		Engineering and Sciences
+	\end{textblock*}
+\end{spacing}
+~\pagebreak
