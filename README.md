@@ -1,11 +1,29 @@
+# Discleamer
+It is an unofficial LaTeX template for the theses of the graduate İzmir 
+Institute of Technology students. This template is for assistance only, and the 
+repository contributor(s) assumes no liability. 
+**There is still bugs and mistakes!**
+
+# Usage
+You can edit the allowed area in the `main.tex` file. You can create a new TeX 
+file in the chapters directory, and input in the `main.tex` file just as 
+`guide.tex`. The `guide.tex` file shows some examples of usage of some LaTeX 
+essencials. Also, check the `preferences.tex` file, you need to set the 
+configurations for your thesis.
+
 # Credits
+
+## Contributors
+- Nuri Furkan Pala
+
+## Additional Credits
 Some parts of the templates are obtained from 
 [a repository of Ronny Majani](https://github.com/ronnymajani/iyte-master-thesis-template).
 
 The example image is an artificial intelligence image generated using 
 [craiyon.com](https://www.craiyon.com/).
 
-# External Licences
+## External Licences
 The MIT License (MIT) Ronny Majani
 
 Copyright (c) 2018 
