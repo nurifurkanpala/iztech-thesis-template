@@ -2,7 +2,7 @@
 It is an unofficial LaTeX template for the theses of the graduate İzmir 
 Institute of Technology students. This template is for assistance only, and the 
 repository contributor(s) assumes no liability. 
-**There is still bugs and mistakes!**
+**There are still bugs and mistakes!**
 
 # Usage
 You can edit the allowed area in the `main.tex` file. You can create a new TeX 
