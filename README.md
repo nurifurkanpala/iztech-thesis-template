@@ -17,6 +17,7 @@ configurations for your thesis.
 - Nuri Furkan Pala
 - Ege Yiğit Çelik
 - Ersin Çine
+- Büşra Çalmaz
 
 ## Additional Credits
 Some parts of the templates are obtained from 
