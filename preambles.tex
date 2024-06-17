@@ -114,6 +114,7 @@
 \newcommand{\TextBlockCenter}{\dimexpr\paperwidth/2-\textwidth/2}
 
 % Set the table of contents
+\AtBeginDocument{\renewcommand\chaptername{CHAPTER}}
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 \usepackage[nottoc]{tocbibind}
@@ -133,7 +134,8 @@
 \setlength{\cftbeforeloftitleskip}{0pt}
 \setlength{\cftbeforelottitleskip}{0pt}
 \renewcommand\cftchappresnum{\chaptername~}
-\renewcommand\cftchapaftersnum{.}
+\renewcommand\cftchapaftersnum{. \ \ }
+\renewcommand\cftsubsecaftersnum{.}
 \newlength{\mytoclength}
 \settowidth{\mytoclength}{\cftchappresnum\cftchapaftersnum}
 \addtolength\cftchapnumwidth{\mytoclength}
