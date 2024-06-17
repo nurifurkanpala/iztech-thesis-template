@@ -97,6 +97,19 @@
 \addbibresource{references.bib}
 \declarecommand{\cite}[1]{\autocite{#1}}
 
+% Set appendices
+\RequirePackage[toc,title]{appendix}
+\AtBeginDocument{\renewcommand\appendixname{APPENDIX}}
+\AtBeginDocument{\renewcommand{\appendixtocname}{APPENDICES}}
+\newenvironment{thesisappendices}{
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}
+\addtocontents{toc}{\protect\vskip20pt}
+\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{1pt}}
+\begin{appendices}
+}{
+\end{appendices}
+}
+
 % Set text block center
 \newcommand{\TextBlockCenter}{\dimexpr\paperwidth/2-\textwidth/2}
 

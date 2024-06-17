@@ -62,6 +62,35 @@
 	%%% END OF THE TEXT %%%
 	%%%%%%%%%%%%%%%%%%%%%%%
 
+	\ifthenelse{\equal{\NumberOfAppendices}{1}}{
+		\begin{thesisappendices}
+			\input{chapters/appendices/appendix_a.tex}
+		\end{thesisappendices}
+	}{}
+
+	\ifthenelse{\equal{\NumberOfAppendices}{2}}{
+		\begin{thesisappendices}
+			\input{chapters/appendices/appendix_a.tex}
+			\input{chapters/appendices/appendix_b.tex}
+		\end{thesisappendices}
+	}{}
+
+	\ifthenelse{\equal{\NumberOfAppendices}{3}}{
+		\begin{thesisappendices}
+			\input{chapters/appendices/appendix_a.tex}
+			\input{chapters/appendices/appendix_b.tex}
+			\input{chapters/appendices/appendix_c.tex}
+		\end{thesisappendices}
+	}{}
+
+	\ifthenelse{\equal{\NumberOfAppendices}{4}}{
+		\begin{thesisappendices}
+			\input{chapters/appendices/appendix_a.tex}
+			\input{chapters/appendices/appendix_b.tex}
+			\input{chapters/appendices/appendix_c.tex}
+			\input{chapters/appendices/appendix_d.tex}
+		\end{thesisappendices}
+	}{}
 	
 	% Reference Material
 	\printbibliography
