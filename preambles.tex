@@ -177,17 +177,27 @@
 \addtocontents{lof}{\vskip\baselineskip\par}
 \makeatother
 
-% Put a dot after the figure and table references
-\renewcommand{\thetable}{\arabic{table}.}
-\renewcommand{\thefigure}{\arabic{figure}.}
-
 % Remove the colon in the captions of the figures and tables
 \usepackage{caption}
-\captionsetup[table]{labelsep=space}
-\captionsetup[figure]{labelsep=space}
+\DeclareCaptionLabelSeparator{dotspace}{.\hspace*{0.5em}}
+\captionsetup[table]{labelsep=dotspace}
+\captionsetup[figure]{labelsep=dotspace}
 
-\BeforeBeginEnvironment{figure}{\vspace{3cm}}
-\AfterEndEnvironment{figure}{\vspace{3cm}}
+% Figure spacings
+\BeforeBeginEnvironment{figure}{\vspace{1cm}}
+\AfterEndEnvironment{figure}{\vspace{1cm}}
+
+% Set up chapter-based numbering for figures and tables
+\usepackage{chngcntr}
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+\counterwithin{equation}{chapter}
+%\counterwithin{algorithm}{chapter}
+
+% Customizing the labels in captions
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
 
 % Other useful packages
 \usepackage{url}
