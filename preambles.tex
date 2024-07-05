@@ -162,7 +162,8 @@
 \addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{}}
 \addtocontents{lot}{\protect\contentsline{table}{\numberline{\textbf{\underline{\tablename}~}}}{\textbf{\underline{Page}}}{}{}}
 \addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}
-\addtocontents{lot}{\vskip\baselineskip\par}
+% Adjusted spacing
+%\addtocontents{lot}{\vskip\baselineskip\par}
 \renewcommand{\cftfigpresnum}{\figurename~}
 \newlength{\myloflength}
 \settowidth{\myloflength}{\cftfigpresnum\cftfigaftersnum}
@@ -173,10 +174,12 @@
 \phantomsection\addtocontents{lof}{
 \protect\contentsline{figure}{\numberline{\textbf{\underline{\figurename}~}}}{\textbf{\underline{Page}}}{}{}} 
 \addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}
-\addtocontents{lof}{\vskip\baselineskip\par}
+% Adjusted spacing
+%\addtocontents{lof}{\vskip\baselineskip\par}
 \makeatother
 \renewcommand{\cftfigaftersnum}{.}
 \renewcommand{\cfttabaftersnum}{.}
+
 
 % Remove the colon in the captions of the figures and tables
 \usepackage{caption}
