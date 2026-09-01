@@ -1,43 +1,41 @@
 \pagenumbering{roman}
 \thispagestyle{empty}
 
-\begin{center}
-	\begin{textblock*}{\textwidth}(3.5cm,4.8cm)
-		\textbf{\fontsize{18pt}{27pt}\selectfont\MakeUppercase\ThesisTitle}
+\begin{center}	
+	\begin{textblock*}{\textwidth}(3.5cm,4.5cm)
+		\fontsize{18pt}{18pt}\selectfont
+		\bfseries
+		\MakeUppercase{\ThesisTitle}\par
 	\end{textblock*}
-
-	\begin{textblock*}{\textwidth}(3.5cm,9.8cm)
-		\begin{spacing}{1}
-			{\fontsize{14}{16}\bf
-				A Thesis Submitted to\\
-				the Graduate School of Engineering and Sciences of\\
-				İzmir Institute of Technology\\
-				in Partial Fulfillment of the Requirements for the Degree of\\
-				~\\
-				\ifthenelse{\equal{\ThesisType}{master}}{
-					MASTER OF SCIENCE\\
-				}{
-					DOCTOR OF PHILOSOPHY\\
-				}
-				~\\
-				in \DepartmentName
+	
+	\begin{textblock*}{\textwidth}(3.5cm,11.5cm)
+		{\fontsize{14}{16}\bf
+			A Thesis Submitted to\\
+			The Graduate School of\\
+			İzmir Institute of Technology\\
+			In Partial Fulfillment of the Requirements for the Degree of\\
+			~\\~\\
+			\ifthenelse{\equal{\ThesisType}{master}}{
+				MASTER OF SCIENCE\\	
+			}{
+				DOCTOR OF PHILOSOPHY\\
 			}
-		\end{spacing}
+			~\\~\\
+			in \DepartmentName
+		}
 	\end{textblock*}
-
-	\begin{textblock*}{\textwidth}(3.5cm,17cm)
-		\begin{spacing}{1}
-			{\fontsize{14}{16}\bf
-				by\\
-				\AuthorName{ }\MakeUppercase\AuthorSurname
-			}
-		\end{spacing}
+	
+	\begin{textblock*}{\textwidth}(3.5cm,21.5cm)
+		{\fontsize{14}{21}\bf
+			by\\
+			\AuthorName{ }\MakeUppercase\AuthorSurname
+		}
 	\end{textblock*}
-
-	\begin{textblock*}{\textwidth}(3.5cm,22.8cm)
-		\begin{spacing}{1}
+	
+	\begin{textblock*}{\textwidth}(3.5cm,25cm)
+		\begin{spacing}{1.5}
 			{\fontsize{14}{16}\bf
-			\DefenceMonth{ }\DefenceYear\\
+				\DefenceMonth{, }\DefenceYear\\
 				İZMİR
 			}
 		\end{spacing}
