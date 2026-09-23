@@ -1,4 +1,4 @@
-# Discleamer
+# Disclaimer
 It is an unofficial LaTeX template for the theses of the graduate İzmir 
 Institute of Technology students. This template is for assistance only, and the 
 repository contributor(s) assumes no liability. 
