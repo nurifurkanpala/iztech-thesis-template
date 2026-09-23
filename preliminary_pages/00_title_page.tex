@@ -1,45 +1,50 @@
 \pagenumbering{roman}
 \thispagestyle{empty}
+	
+\begin{textblock*}{\textwidth}(3.5cm,4.7cm)
+	\centering
+	\fontsize{18}{19}\selectfont\bfseries
+	\MakeUppercase{\ThesisTitle}\par
+\end{textblock*}
 
-\begin{center}	
-	\begin{textblock*}{\textwidth}(3.5cm,4.5cm)
-		\fontsize{18pt}{18pt}\selectfont
-		\bfseries
-		\MakeUppercase{\ThesisTitle}\par
-	\end{textblock*}
-	
-	\begin{textblock*}{\textwidth}(3.5cm,11.5cm)
-		{\fontsize{14}{16}\bf
-			A Thesis Submitted to\\
-			The Graduate School of\\
-			İzmir Institute of Technology\\
-			In Partial Fulfillment of the Requirements for the Degree of\\
-			~\\~\\
-			\ifthenelse{\equal{\ThesisType}{master}}{
-				MASTER OF SCIENCE\\	
-			}{
-				DOCTOR OF PHILOSOPHY\\
-			}
-			~\\~\\
-			in \DepartmentName
-		}
-	\end{textblock*}
-	
-	\begin{textblock*}{\textwidth}(3.5cm,21.5cm)
-		{\fontsize{14}{21}\bf
-			by\\
-			\AuthorName{ }\MakeUppercase\AuthorSurname
-		}
-	\end{textblock*}
-	
-	\begin{textblock*}{\textwidth}(3.5cm,25cm)
-		\begin{spacing}{1.5}
-			{\fontsize{14}{16}\bf
-				\DefenceMonth{, }\DefenceYear\\
-				İZMİR
-			}
-		\end{spacing}
-	\end{textblock*}
-\end{center}
+\begin{textblock*}{\textwidth}(3.5cm,11.8cm)
+	\centering
+	{\fontsize{14}{16}\selectfont\bfseries
+		A Thesis Submitted to\\
+		The Graduate School of\\
+		İzmir Institute of Technology\\
+		In Partial Fulfillment of the Requirements for the Degree of
+	}
+\end{textblock*}
+
+\begin{textblock*}{\textwidth}(3.5cm,16.7cm)
+	\centering
+	\fontsize{14}{16}\selectfont\bfseries
+	\ifthenelse{\equal{\ThesisType}{master}}{
+		MASTER OF SCIENCE\\	
+	}{
+		DOCTOR OF PHILOSOPHY\\
+	}
+\end{textblock*}
+
+\begin{textblock*}{\textwidth}(3.5cm,19.3cm)
+	\centering
+	\fontsize{14}{16}\selectfont\bfseries
+	in \DepartmentName
+\end{textblock*}
+
+\begin{textblock*}{\textwidth}(3.5cm,21.8cm)
+	\centering
+	\fontsize{14}{19}\selectfont\bfseries
+		by\\
+		\AuthorName{ }\MakeUppercase\AuthorSurname
+\end{textblock*}
+
+\begin{textblock*}{\textwidth}(3.5cm,25.2cm)
+	\centering
+	\fontsize{14}{18}\selectfont\bfseries
+	\DefenceMonth{, }\DefenceYear\\
+	İZMİR
+\end{textblock*}
 
 ~\pagebreak
