@@ -2,84 +2,99 @@
 
 \thispagestyle{empty}
 
-\begin{spacing}{1}
+\begin{textblock*}{\textwidth}(3.5cm,2.5cm)
 	\noindent We approve the thesis of
-	\textbf{\AuthorName{ }\MakeUppercase\AuthorSurname}
-	\vspace{0.5cm}
+	\AuthorName{ }\textbf{\MakeUppercase\AuthorSurname}
+\end{textblock*}
 
+\begin{textblock*}{\textwidth}(3.5cm,4.1cm)
 	\noindent\textbf{Examining Committee Members:}
-	\vspace{0.5cm}
+\end{textblock*}
 
-	\noindent\rule{5cm}{0.1mm}\\
-	\textbf{\CommitteeMemberOneTitle{ }\CommitteeMemberOneName{}
+\begin{textblock*}{\textwidth}(3.5cm,5.5cm)
+	\noindent\textbf{\CommitteeMemberOneTitle{ }\CommitteeMemberOneName{}
 	\MakeUppercase\CommitteeMemberOneSurname}\\
-	Department of \CommitteeMemberOneDepartment, \CommitteeMemberOneUniversity
-	\vspace{0.5cm}
+	\CommitteeMemberOneDepartment, \CommitteeMemberOneUniversity
+\end{textblock*}
 
-	\noindent\rule{5cm}{0.1mm}\\
-	\textbf{\CommitteeMemberTwoTitle{ }\CommitteeMemberTwoName{}
+\begin{textblock*}{\textwidth}(3.5cm,7.7cm)
+	\noindent\textbf{\CommitteeMemberTwoTitle{ }\CommitteeMemberTwoName{}
 	\MakeUppercase\CommitteeMemberTwoSurname}\\
-	Department of \CommitteeMemberTwoDepartment, \CommitteeMemberTwoUniversity
-	\vspace{0.5cm}
+	\CommitteeMemberTwoDepartment, \CommitteeMemberTwoUniversity
+\end{textblock*}
 
-	\noindent\rule{5cm}{0.1mm}\\
-	\textbf{\CommitteeMemberThreeTitle{ }\CommitteeMemberThreeName{}
+\begin{textblock*}{\textwidth}(3.5cm,9.9cm)
+	\noindent\textbf{\CommitteeMemberThreeTitle{ }\CommitteeMemberThreeName{}
 	\MakeUppercase\CommitteeMemberThreeSurname}\\
-	Department of \CommitteeMemberThreeDepartment, \CommitteeMemberThreeUniversity
-	\vspace{0.5cm}
+	\CommitteeMemberThreeDepartment, \CommitteeMemberThreeUniversity
+\end{textblock*}
 
-	\ifthenelse{\equal{\ForthCommitteeMember}{yes}}{
-		\noindent\rule{5cm}{0.1mm}\\
-		\textbf{\CommitteeMemberFourTitle{ }\CommitteeMemberFourName{}
+\ifthenelse{\equal{\ForthCommitteeMember}{yes}}{
+	\begin{textblock*}{\textwidth}(3.5cm,12.1cm)
+		\noindent\textbf{\CommitteeMemberFourTitle{ }\CommitteeMemberFourName{}
 		\MakeUppercase\CommitteeMemberFourSurname}\\
-		Department of \CommitteeMemberFourDepartment, \CommitteeMemberFourUniversity
-		\vspace{0.5cm}
-	}{}
+		\CommitteeMemberFourDepartment, \CommitteeMemberFourUniversity
+	\end{textblock*}
+	\begin{tikzpicture}[remember picture, overlay, shift={(current page.north west)}]
+		\draw[thick] (13.5cm, -13.2cm) -- (17.5cm, -13.2cm);
+	\end{tikzpicture}
+}{}
 
-	\ifthenelse{\equal{\FifthCommitteeMember}{yes}}{
-		\noindent\rule{5cm}{0.1mm}\\
-		\textbf{\CommitteeMemberFiveTitle{ }\CommitteeMemberFiveName{}
+\ifthenelse{\equal{\FifthCommitteeMember}{yes}}{
+	\begin{textblock*}{\textwidth}(3.5cm,14.3cm)
+		\noindent\textbf{\CommitteeMemberFiveTitle{ }\CommitteeMemberFiveName{}
 		\MakeUppercase\CommitteeMemberFiveSurname}\\
-		Department of \CommitteeMemberFiveDepartment, \CommitteeMemberFiveUniversity
-		\vspace{0.5cm}
-	}{}
-
-	\begin{textblock*}{\textwidth}(3.5cm,17cm)
-		\noindent\rule{5cm}{0.1mm}\\
-		\textbf{\SupervisorTitle{ }\SupervisorName{}
-		\MakeUppercase\SupervisorSurname}\\
-		Department of \SupervisorDepartment\\
-		\SupervisorUniversity
+		\CommitteeMemberFiveDepartment, \CommitteeMemberFiveUniversity
 	\end{textblock*}
+	\begin{tikzpicture}[remember picture, overlay, shift={(current page.north west)}]
+		\draw[thick] (13.5cm, -15.4cm) -- (17.5cm, -15.4cm);
+	\end{tikzpicture}
+}{}
 
-	\ifthenelse{\equal{\CoSupervisor}{yes}}{
-		\begin{textblock*}{\textwidth}(12cm,17cm)
-			\noindent\rule{5cm}{0.1mm}\\
-			\textbf{\CoSupervisorTitle{ }\CoSupervisorName{}
-			\MakeUppercase\CoSupervisorSurname}\\
-			Department of \CoSupervisorDepartment\\
-			\CoSupervisorUniversity
-		\end{textblock*}
-	}{}
-	
-	\begin{textblock*}{\textwidth}(14cm,16cm)
-		\textbf{\ApprovalPageDate}
-	\end{textblock*}
+\begin{textblock*}{\textwidth}(3.5cm,20.1cm)
+	\noindent\textbf{\SupervisorTitle{ }\SupervisorName{}
+	\MakeUppercase\SupervisorSurname}\\
+	Supervisor, \SupervisorDepartment\\
+	\SupervisorUniversity
+\end{textblock*}
 
-	\begin{textblock*}{\textwidth}(3.5cm,20cm)
-		\noindent\rule{5cm}{0.1mm}\\
-		\textbf{\HeadOfTheDepartmentTitle{ }\HeadOfTheDepartmentName{}
-		\MakeUppercase\HeadOfTheDepartmentSurname}\\
-		Head of the Department of\\
-		\HeadOfTheDepartmentDepartment
+\ifthenelse{\equal{\CoSupervisor}{yes}}{
+	\begin{textblock*}{\textwidth}(11.4cm,20.1cm)
+		\noindent\textbf{\CoSupervisorTitle{ }\CoSupervisorName{}
+		\MakeUppercase\CoSupervisorSurname}\\
+		Co-Supervisor, \CoSupervisorDepartment\\
+		\CoSupervisorUniversity
 	\end{textblock*}
+	\begin{tikzpicture}[remember picture, overlay, shift={(current page.north west)}]
+		\draw[thick] (11.3cm, -19.7cm) -- (15.5cm, -19.7cm);
+	\end{tikzpicture}
+}{}
 
-	\begin{textblock*}{\textwidth}(12cm,20cm)
-		\noindent\rule{5cm}{0.1mm}\\
-		\textbf{\HeadOfTheGraduateSchoolTitle{ }\HeadOfTheGraduateSchoolName{}
-		\MakeUppercase\HeadOfTheGraduateSchoolSurname}\\
-		Dean of the Graduate School of\\
-		Engineering and Sciences
-	\end{textblock*}
-\end{spacing}
+\begin{textblock*}{\textwidth}(3.5cm,25.2cm)
+	\noindent\textbf{\HeadOfTheDepartmentTitle{ }\HeadOfTheDepartmentName{}
+	\MakeUppercase\HeadOfTheDepartmentSurname}\\
+	Head of the Department of\\
+	\HeadOfTheDepartmentDepartment
+\end{textblock*}
+
+\begin{textblock*}{\textwidth}(11.4cm,25.2cm)
+	\noindent\textbf{\HeadOfTheGraduateSchoolTitle{ }\HeadOfTheGraduateSchoolName{}
+	\MakeUppercase\HeadOfTheGraduateSchoolSurname}\\
+	Dean of the Graduate School of\\
+	Engineering and Sciences
+\end{textblock*}
+
+\begin{textblock*}{\textwidth}(14.2cm,16.5cm)
+	\ApprovalPageDate
+\end{textblock*}
+
+\begin{tikzpicture}[remember picture, overlay, shift={(current page.north west)}]
+	\draw[thick] (13.5cm, -6.6cm) -- (17.5cm, -6.6cm);
+	\draw[thick] (13.5cm, -8.8cm) -- (17.5cm, -8.8cm);
+	\draw[thick] (13.5cm, -11.0cm) -- (17.5cm, -11.0cm);
+	\draw[thick] (3.5cm, -19.7cm) -- (7.9cm, -19.7cm);
+	\draw[thick] (3.5cm, -24.8cm) -- (7.9cm, -24.8cm);
+	\draw[thick] (11.3cm, -24.8cm) -- (15.5cm, -24.8cm);
+\end{tikzpicture}
+
 ~\pagebreak
