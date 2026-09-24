@@ -111,8 +111,7 @@
 \AtBeginDocument{\renewcommand{\appendixtocname}{APPENDICES}}
 \newenvironment{thesisappendices}{
 	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}
-	\addtocontents{toc}{\protect\vskip20pt}
-	\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{1pt}}
+	\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{0pt}}
 	\begin{appendices}
 	\titleformat{\chapter}[display]
 		{\vspace{-3cm}\centering\normalfont\fontsize{16}{24}\selectfont\bfseries}
@@ -133,30 +132,28 @@
 \usepackage[nottoc]{tocbibind}
 \RequirePackage[titles]{tocloft}
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
-\renewcommand{\listtablename}{LIST OF TABLES\vspace{0.5cm}}
-\renewcommand{\listfigurename}{LIST OF FIGURES\vspace{0.5cm}}
+\renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
 \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftdotsep}{1}
 \renewcommand{\cftchapfont}{\normalfont}
 \renewcommand{\cftchappagefont}{} 
 \renewcommand{\cftpartpagefont}{}
-\renewcommand{\cftsecaftersnum}{.}
-\setlength{\cftbeforechapskip}{20pt}
+\setlength{\cftbeforechapskip}{0pt}
 \setlength{\cftbeforetoctitleskip}{0pt}
 \setlength{\cftbeforeloftitleskip}{0pt}
 \setlength{\cftbeforelottitleskip}{0pt}
 \renewcommand\cftchappresnum{\chaptername~}
-\renewcommand\cftchapaftersnum{. \ \ }
-\renewcommand\cftsubsecaftersnum{.}
+\renewcommand\cftchapaftersnum{ }
 \newlength{\mytoclength}
 \settowidth{\mytoclength}{\cftchappresnum\cftchapaftersnum}
 \addtolength\cftchapnumwidth{\mytoclength}
-\setlength{\cftsecindent}{5.5em}
-\setlength{\cftsubsecindent}{6.25em}
-\setlength{\cftsubsubsecindent}{7em}
-\setlength{\cftparaindent}{7.75em}
-\setlength{\cftsubparaindent}{8.5em}
+\setlength{\cftsecindent}{2em}
+\setlength{\cftsubsecindent}{3.5em}
+\setlength{\cftsubsubsecindent}{5em}
+\setlength{\cftparaindent}{6.5em}
+\setlength{\cftsubparaindent}{8em}
 
 % Set lists
 \makeatletter
