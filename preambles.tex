@@ -28,6 +28,18 @@
 \makeatother
 \let\cleardoublepage\clearpage
 
+% Global chapter wrapper to automatically uppercase chapter names in the TOC.
+\makeatletter
+\let\origchapter\chapter
+\def\chapter{%
+	\@ifstar{\@mycstarred}{\@mycunstarred}%
+}
+\def\@mycstarred#1{\origchapter*{#1}}
+\def\@mycunstarred{\@ifnextchar[{\@mycopt}{\@mycnoopt}}
+\def\@mycopt[#1]#2{\origchapter[\MakeUppercase{#1}]{#2}}
+\def\@mycnoopt#1{\origchapter[\MakeUppercase{#1}]{#1}}
+\makeatother
+
 % This package is to set the paper type and margins.
 \usepackage{geometry}
 \geometry{
@@ -109,9 +121,12 @@
 \RequirePackage[toc,title]{appendix}
 \AtBeginDocument{\renewcommand\appendixname{APPENDIX}}
 \AtBeginDocument{\renewcommand{\appendixtocname}{APPENDICES}}
+\makeatletter
 \newenvironment{thesisappendices}{
 	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}
 	\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{0pt}}
+	\addtocontents{toc}{\protect\setlength{\protect\cftchapindent}{2em}} 
+	\addtocontents{toc}{\protect\addtolength{\protect\cftchapnumwidth}{1.5em}}
 	\begin{appendices}
 	\titleformat{\chapter}[display]
 		{\vspace{-3cm}\centering\normalfont\fontsize{16}{24}\selectfont\bfseries}
@@ -121,6 +136,7 @@
 }{
 	\end{appendices}
 }
+\makeatother
 
 % Set text block center
 \newcommand{\TextBlockCenter}{\dimexpr\paperwidth/2-\textwidth/2}
