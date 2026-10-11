@@ -216,8 +216,8 @@
 % Remove the colon in the captions of the figures and tables
 \usepackage{caption}
 \DeclareCaptionLabelSeparator{dotspace}{\hspace*{0.5em}}
-\captionsetup[table]{labelsep=dotspace}
-\captionsetup[figure]{labelsep=dotspace}
+\captionsetup[table]{labelsep=dotspace, justification=justified, singlelinecheck=false}
+\captionsetup[figure]{labelsep=dotspace, justification=justified, singlelinecheck=false}
 
 % Figure spacings
 \BeforeBeginEnvironment{figure}{\vspace{1cm}}
@@ -231,9 +231,9 @@
 %\counterwithin{algorithm}{chapter}
 
 % Customizing the labels in captions
-\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
-\renewcommand{\thetable}{\thechapter.\arabic{table}}
-\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+\renewcommand{\thefigure}{\thechapter.~\arabic{figure}}
+\renewcommand{\thetable}{\thechapter.~\arabic{table}}
+\renewcommand{\theequation}{\thechapter.~\arabic{equation}}
 
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
