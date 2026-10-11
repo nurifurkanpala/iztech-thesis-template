@@ -109,7 +109,11 @@
 }{}
 \ifthenelse{\equal{\BibliographyPreferences}{acs}}{
 	\usepackage[style=chem-acs,backend=biber]{biblatex}
+	\DeclareFieldFormat{labelnumberwidth}{#1.}
 }{}
+\setlength{\bibhang}{1cm}
+\renewcommand{\bibfont}{\setstretch{1}}
+\setlength{\bibitemsep}{\baselineskip}
 \addbibresource{references.bib}
 \declarecommand{\cite}[1]{\autocite{#1}}
 
