@@ -55,7 +55,7 @@
 	\chapter{Body}
 	\blindtext[20]
 	\chapter{Conclusion}
-	\blindtext[11]
+	\blindtext[10]
 
 	% Guide of usage of basic LaTeX commands
 	\chapter{Guide}
@@ -64,9 +64,16 @@
 	%%%%%%%%%%%%%%%%%%%%%%%
 	%%% END OF THE TEXT %%%
 	%%%%%%%%%%%%%%%%%%%%%%%
-
-	% Reference Material
-	\printbibliography[heading=bibintoc, title={REFERENCES}]%
+	
+	\chapter*{REFERENCES}
+	\addcontentsline{toc}{chapter}{REFERENCES}
+	\printbibliography[heading=none]
+	
+	\ifthenelse{\equal{\NumberOfAppendices}{0}}{}{
+		\addtocontents{toc}{\protect\vspace{\cftbeforechapskip}}
+		\addcontentsline{toc}{chapter}{APPENDICES}
+	}
+	
 	\ifthenelse{\equal{\NumberOfAppendices}{1}}{%
 		\begin{thesisappendices}%
 			\input{chapters/appendices/appendix_a.tex}%

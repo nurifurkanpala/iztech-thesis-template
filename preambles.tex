@@ -123,20 +123,21 @@
 \AtBeginDocument{\renewcommand\appendixname{APPENDIX}}
 \AtBeginDocument{\renewcommand{\appendixtocname}{APPENDICES}}
 \makeatletter
-\makeatletter
-\makeatletter
 \newenvironment{thesisappendices}{%
-	\immediate\write\@auxout{\string\@writefile{toc}{\string\renewcommand{\string\cftchappresnum}{\appendixname\string\space}}}%
-	\immediate\write\@auxout{\string\@writefile{toc}{\string\setlength{\string\cftbeforechapskip}{0pt}}}%
-	\immediate\write\@auxout{\string\@writefile{toc}{\string\setlength{\string\cftchapindent}{2em}}}%
-	\immediate\write\@auxout{\string\@writefile{toc}{\string\addtolength{\string\cftchapnumwidth}{1.5em}}}%
 	\appendix%
+	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}%
+	\addtocontents{toc}{\protect\setlength{\protect\cftchapindent}{1.5em}}%
+	\addtocontents{toc}{\protect\setlength{\protect\cftchapnumwidth}{6em}}%
 	\titleformat{\chapter}[display]%
 	{\vspace{-3cm}\centering\normalfont\fontsize{16}{24}\selectfont\bfseries}%
 	{APPENDIX \thechapter}%
 	{0.5cm}{\MakeUppercase}%
 	[\vspace{-0.2cm}]%
-}{}%
+}{%
+	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{}}%
+	\addtocontents{toc}{\protect\setlength{\protect\cftchapindent}{0pt}}%
+	\addtocontents{toc}{\protect\setlength{\protect\cftchapnumwidth}{1.55em}}%
+}%
 \makeatother
 
 % Set text block center
@@ -146,7 +147,7 @@
 \AtBeginDocument{\renewcommand\chaptername{CHAPTER}}
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
-\usepackage[nottoc]{tocbibind}
+\usepackage[nottoc,notbib]{tocbibind}
 \RequirePackage[titles]{tocloft}
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
 \renewcommand{\listtablename}{LIST OF TABLES}
@@ -161,16 +162,31 @@
 \setlength{\cftbeforetoctitleskip}{0pt}
 \setlength{\cftbeforeloftitleskip}{0pt}
 \setlength{\cftbeforelottitleskip}{0pt}
-\renewcommand\cftchappresnum{\chaptername~}
-\renewcommand\cftchapaftersnum{ }
+\makeatletter
+\renewcommand{\cftchappresnum}{\chaptername\space\space}
+\let\origcontentsline\contentsline
+\renewcommand{\contentsline}[3]{%
+	\ifthenelse{\equal{#1}{chapter}}{%
+		\def\@tempA{#2}%
+		\def\@tempB{\numberline}%
+		\ifx\@tempA\@tempB
+		\else
+		\renewcommand{\cftchappresnum}{}%
+		\fi
+	}{}%
+	\origcontentsline{#1}{#2}{#3}%
+}
+\makeatother
+\renewcommand\cftchapaftersnum{\quad}
 \newlength{\mytoclength}
-\settowidth{\mytoclength}{\cftchappresnum\cftchapaftersnum}
+\settowidth{\mytoclength}{\chaptername\space\space}
 \addtolength\cftchapnumwidth{\mytoclength}
 \setlength{\cftsecindent}{2em}
-\setlength{\cftsubsecindent}{3.5em}
-\setlength{\cftsubsubsecindent}{5em}
-\setlength{\cftparaindent}{6.5em}
-\setlength{\cftsubparaindent}{8em}
+\setlength{\cftsubsecindent}{2.5em}
+\setlength{\cftsubsubsecindent}{3em}
+\setlength{\cftparaindent}{3.5em}
+\setlength{\cftsubparaindent}{4em}
+\setlength{\cftchapindent}{0pt}
 
 % Set lists
 \makeatletter
