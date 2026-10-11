@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,twoside,openright]{report}
+\documentclass[12pt,a4paper,twoside,openany]{report}
 \input{preferences}
 \input{preambles}
 
@@ -55,7 +55,7 @@
 	\chapter{Body}
 	\blindtext[20]
 	\chapter{Conclusion}
-	\blindtext[10]
+	\blindtext[11]
 
 	% Guide of usage of basic LaTeX commands
 	\chapter{Guide}
@@ -66,35 +66,36 @@
 	%%%%%%%%%%%%%%%%%%%%%%%
 
 	% Reference Material
-	\printbibliography[heading=bibintoc, title={REFERENCES}]
-
-	\ifthenelse{\equal{\NumberOfAppendices}{1}}{
-		\begin{thesisappendices}
-			\input{chapters/appendices/appendix_a.tex}
-		\end{thesisappendices}
-	}{}
-
-	\ifthenelse{\equal{\NumberOfAppendices}{2}}{
-		\begin{thesisappendices}
-			\input{chapters/appendices/appendix_a.tex}
-			\input{chapters/appendices/appendix_b.tex}
-		\end{thesisappendices}
-	}{}
-
-	\ifthenelse{\equal{\NumberOfAppendices}{3}}{
-		\begin{thesisappendices}
-			\input{chapters/appendices/appendix_a.tex}
-			\input{chapters/appendices/appendix_b.tex}
-			\input{chapters/appendices/appendix_c.tex}
-		\end{thesisappendices}
-	}{}
-
-	\ifthenelse{\equal{\NumberOfAppendices}{4}}{
-		\begin{thesisappendices}
-			\input{chapters/appendices/appendix_a.tex}
-			\input{chapters/appendices/appendix_b.tex}
-			\input{chapters/appendices/appendix_c.tex}
-			\input{chapters/appendices/appendix_d.tex}
-		\end{thesisappendices}
-	}{}
+	\printbibliography[heading=bibintoc, title={REFERENCES}]%
+	\ifthenelse{\equal{\NumberOfAppendices}{1}}{%
+		\begin{thesisappendices}%
+			\input{chapters/appendices/appendix_a.tex}%
+		\end{thesisappendices}%
+	}{}%
+	\ifthenelse{\equal{\NumberOfAppendices}{2}}{%
+		\begin{thesisappendices}%
+			\input{chapters/appendices/appendix_a.tex}%
+			\input{chapters/appendices/appendix_b.tex}%
+		\end{thesisappendices}%
+	}{}%
+	\ifthenelse{\equal{\NumberOfAppendices}{3}}{%
+		\begin{thesisappendices}%
+			\input{chapters/appendices/appendix_a.tex}%
+			\input{chapters/appendices/appendix_b.tex}%
+			\input{chapters/appendices/appendix_c.tex}%
+		\end{thesisappendices}%
+	}{}%
+	\ifthenelse{\equal{\NumberOfAppendices}{4}}{%
+		\begin{thesisappendices}%
+			\input{chapters/appendices/appendix_a.tex}%
+			\input{chapters/appendices/appendix_b.tex}%
+			\input{chapters/appendices/appendix_c.tex}%
+			\input{chapters/appendices/appendix_d.tex}%
+		\end{thesisappendices}%
+	}{}%
+	
+	\clearpage
+	\makeatletter
+	\def\clearpage{\def\clearpage{}}
+	\makeatother
 \end{document}
