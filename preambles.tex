@@ -133,6 +133,15 @@
 	{APPENDIX \thechapter}%
 	{1.25cm}{\MakeUppercase}%
 	[\vspace{0.80cm}]%
+	\clearpage
+	\vspace*{-11pt}
+	\begin{center}
+		\normalfont\fontsize{16}{16}\selectfont\bfseries APPENDICES
+	\end{center}
+	\vspace{1cm}
+	\let\origclearpage\clearpage
+	\def\clearpage{\let\clearpage\origclearpage}%
+	% -----------------------------------------------------------
 }{%
 	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{}}%
 	\addtocontents{toc}{\protect\setlength{\protect\cftchapindent}{0pt}}%
